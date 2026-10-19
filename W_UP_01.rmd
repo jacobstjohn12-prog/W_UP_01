@@ -113,5 +113,7 @@ This procedure fits the question for these reasons:
 
 # Discussion and Conclusion
 
-<!--Discussion and conclusion here. If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason. Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+We reject the null hypothesis. Line players and skill players do not have the same average number of push-ups. If the averages were truly the same, the probability of a sample difference at least this large is 0.000009421. Skill players did more push-ups: about 49.7 on average, compared with about 17.1 for line players.
+
+That difference should not be read as proof that playing a skill position causes a player to do more push-ups. Position was not assigned by the study. Line positions are the ones that require high body mass, and skill positions are the ones that require more running, so the two groups already differ in the kind of athlete who plays them. Body weight, training, or both could sit behind the push-up gap. The result does answer the question that was asked: in this team, the average number of push-ups for skill players is statistically different from, and higher than, the average for line players.
 
