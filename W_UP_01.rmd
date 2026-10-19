@@ -25,7 +25,13 @@ $H_A$: The average number of pushups done by line players is statistically diffe
 
 # Methods
 
-<!--Decide on your methods: use "variable analysis" or other appropriate descriptors. Make sure to choose at least one graphical method and at least one numerical method.!-->
+Position is categorical, with levels LINE and SKILL. The number of push-ups is numerical. This is a categorical-versus-numerical question with two groups, so the comparison of averages uses a two-sample *t*-test.
+
+The descriptive part of the report has two pieces. A side-by-side boxplot shows the center and spread of push-ups in each position. A numerical summary gives the sample size, five-number summary, mean, and standard deviation for each group.
+
+The inferential test is Welch's two-sample *t*-test of `pushups` by `position`. The alternative hypothesis is two-sided, because it says the averages are different and does not state which group is higher. Welch's test compares means and does not require the two groups to have the same variance. That choice fits these data: the groups are unequal in size, and the numerical summary shows that skill players are more spread out than line players. The significance level is 0.05.
+
+The test treats the 30 players as independent observations. It also relies on the push-up counts within each position being roughly normal, or at least not so skewed that the mean is a poor summary. Those conditions are checked against the boxplot and the group sizes in the results.
 
 # Results
 
