@@ -41,7 +41,20 @@ The test treats the 30 players as independent observations. It also relies on th
 
 ### Graphical Descriptive Results
 
-<!--Graphical results here. Make sure to show your code. Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too. Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+The boxplot below compares the numerical push-up counts for the two position categories. Under the null hypothesis the two boxes would have similar centers. They do not. The skill box sits well above the line box, and the two boxes do not overlap. A typical skill player completed more push-ups in two minutes than a typical line player. Line players are packed into a low, narrow range. Skill players are higher and more spread out, including one very high value.
+
+```{r}
+boxplot(
+  pushups ~ position,
+  data = mydata,
+  main = "Push-ups by football position",
+  xlab = "Position",
+  ylab = "Push-ups in two minutes",
+  col = c("#9ecae1", "#a1d99b")
+)
+```
+
+This graph is aimed at the hypothesis under test. It shows a large separation in the center of the push-up distribution, with skill players higher. That pattern is what a difference in averages would look like. The graph does not by itself give the probability of a difference this large if the null hypothesis were true. That probability comes from the *t*-test in the inferential section.
 
 ### Numerical Descriptive Results
 
