@@ -58,7 +58,32 @@ This graph is aimed at the hypothesis under test. It shows a large separation in
 
 ### Numerical Descriptive Results
 
-<!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+The table reports the sample size and the usual numerical summaries of push-ups for each position. These numbers describe the same comparison the boxplot shows, in a form that can be tied directly to the averages named in the hypotheses.
+
+```{r}
+group_stats <- function(x) {
+  c(
+    n = length(x),
+    min = min(x),
+    Q1 = as.numeric(quantile(x, 0.25)),
+    median = median(x),
+    Q3 = as.numeric(quantile(x, 0.75)),
+    max = max(x),
+    mean = mean(x),
+    sd = sd(x)
+  )
+}
+stats_table <- aggregate(pushups ~ position, data = mydata, group_stats)
+stats_table <- cbind(
+  position = stats_table$position,
+  as.data.frame(stats_table$pushups)
+)
+stats_table
+```
+
+Eight players are line players and 22 are skill players. The mean number of push-ups is 17.1 for line players and 49.7 for skill players, so the sample averages differ by about 32.6 push-ups. The medians tell the same story: 14.5 for line players and 47.5 for skill players. The middle half of the line group runs from 10.3 to 24.3 push-ups, while the middle half of the skill group runs from 31.3 to 57.5. Skill players are also more variable (standard deviation 23.0 versus 9.7), and the highest skill count is 108.
+
+Relative to the hypothesis, the numerical results show that the skill average is much higher than the line average in this sample. The unequal standard deviations are why the inferential test does not assume equal variances. These summaries describe the observed players. They do not yet give the probability of a gap this large if the two position groups actually had the same average.
 
 ## Inferential Results
 
