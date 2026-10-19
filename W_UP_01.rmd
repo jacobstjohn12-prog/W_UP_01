@@ -1,13 +1,9 @@
 ---
-title: "W_UP_01"
-author: "your name here"
-date: "fall 2020"
+title: "Push-ups by line and skill players"
+author: "Jacob"
+date: "October 19, 2026"
 output: html_document
 ---
-
-
-
-The report structure should include five sections.  see below
 
 
 
@@ -19,11 +15,11 @@ mydata <- read.csv(file="pushups.csv")
 
 # Introduction
 
-<!--In this section you explain what you are trying to show. Where did the data come from? What is the research or other question you are trying to answer?!-->
+This report asks whether Georgetown College football players at line positions and skill positions have the same average number of push-ups. The data are the `pushups` dataset from the `tigerstats` package, supplied in this project as `pushups.csv`. Two players asked their teammates to do as many push-ups as they could in two minutes. There are 30 players. Each row records body weight in pounds, the number of push-ups completed, and position. Position has two categories: `LINE` (positions that require high body mass) and `SKILL` (positions that require a lot of running).
 
-Create an Rstudio project in your shared space on rstudio.cloud.  Using the dataset called pushups from the tigerstats package in R; answer the question posed by this null and alternate hypothesis in an html markdown document.
+The question is a comparison of a numerical response, push-ups, across a categorical grouping variable, position. The hypotheses are:
 
-$H_0$: There is no difference between the average number of pushups of line vs skill players
+$H_0$: There is no difference between the average number of pushups of line vs skill players.
 
 $H_A$: The average number of pushups done by line players is statistically different than that of skill players.
 
