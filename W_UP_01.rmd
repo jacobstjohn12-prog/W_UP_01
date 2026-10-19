@@ -87,7 +87,28 @@ Relative to the hypothesis, the numerical results show that the skill average is
 
 ## Inferential Results
 
-<!--State hypothesis clearly. Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc. Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+The hypotheses tested here are the ones stated in the introduction.
+
+$H_0$: the mean number of push-ups is the same for line players and skill players.
+
+$H_A$: the mean number of push-ups differs between line players and skill players.
+
+Welch's two-sample *t*-test is appropriate because push-ups are numerical, position is categorical with two levels, and the standard deviations are not the same. The code below estimates the difference in means (line minus skill), the *t* statistic, the degrees of freedom, the two-sided *p*-value, and a 95% confidence interval.
+
+```{r}
+t.test(pushups ~ position, data = mydata)
+```
+
+The test statistic is $t = -5.43$ on $27.08$ degrees of freedom. The negative sign means the line mean is below the skill mean. The sample means are 17.13 push-ups for line players and 49.73 push-ups for skill players. The 95% confidence interval for the line mean minus the skill mean is $(-44.91, -20.29)$. The interval does not contain 0, so the data support a lower line average. Skill players average about 20 to 45 more push-ups than line players.
+
+The *p*-value is $9.421 \times 10^{-6}$, or 0.000009421. If the null hypothesis were true, and line and skill players had the same average number of push-ups, the probability of observing a difference in sample means at least this large is 0.000009421. That is about 9 chances in a million. A difference this extreme would almost never show up by chance alone when there is truly no difference in averages. Because that probability is far below 0.05, we reject $H_0$. The average number of push-ups for line players is statistically different from the average for skill players, and the estimates show that the skill average is higher.
+
+This procedure fits the question for these reasons:
+
+- The response is numerical and the grouping variable is categorical with exactly two groups, which is the setting for a two-sample *t*-test of means.
+- The players are separate people, so the observations are treated as independent.
+- Welch's version does not assume equal variances. The group standard deviations, 9.7 and 23.0, and the unequal sample sizes, 8 and 22, make that the right version.
+- The line sample is small ($n = 8$), and one skill player completed 108 push-ups. The boxplot still shows the whole skill group shifted upward, and the skill median (47.5) remains far above the line median (14.5), so the mean difference is not an artifact of a single point. The counts within each group are close enough to symmetric for a comparison of means.
 
 
 # Discussion and Conclusion
